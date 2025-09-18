@@ -7,6 +7,7 @@ require 'yaml'
 require 'sinatra/reloader'
 require 'active_record'
 require 'erb'
+require 'dotenv/load'
 require './models/vote.rb'
 
 # 環境変数
@@ -17,7 +18,6 @@ dev_flag = environment == 'development'
 
 # 開発環境のみ実行
 if dev_flag
-  require 'dotenv/load'
   require 'logger'
 
   # ログ出力設定
