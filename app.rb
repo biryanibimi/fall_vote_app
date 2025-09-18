@@ -32,7 +32,7 @@ end
 # DB接続設定
 # エイリアス有効でdatabase.ymlを読み込む
 db_config = YAML.load_file('config/database.yml', aliases: true)
-db_config.merge({"production" => {"url" => database_url}}) unless dev_flag
+db_config.merge!({"production" => {"adapter"=>"postgresql", "encoding"=>"unicode", "pool"=>5, "url" => database_url}})
 puts db_config
 ActiveRecord::Base.establish_connection(db_config[environment])
 
