@@ -13,7 +13,7 @@ require './models/vote.rb'
 environment = ENV['RACK_ENV']
 
 # 開発環境フラグ
-dev_flag = if environment == 'development'
+dev_flag = environment == 'development'
 
 # 開発環境のみ実行
 if dev_flag
