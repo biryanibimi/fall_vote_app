@@ -27,6 +27,8 @@ if dev_flag
   LOGGER = Logger.new(logfile)
 end
 
+put ENV['DATABASE_URL']
+
 # DB接続設定
 # エイリアス有効でdatabase.ymlを読み込む
 db_config = YAML.load_file('config/database.yml', aliases: true)
