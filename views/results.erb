@@ -1,0 +1,12 @@
+<table class="table table-hover table-striped">
+  <% Votes.each do |record| %>
+    <tr>
+      <th></th>
+      <td><%= record.vote_counts || 0 %>票</td>
+      <td><%= record.beverage_name %></td>
+      <td><%= record.shop_name %></td>
+      <td><a href="<%= record.url %>" target="_blank">公式サイト</a></td>
+    </tr>
+  <% end %>
+</table>
+<p><a href="/">もっと投票する</a></p>
