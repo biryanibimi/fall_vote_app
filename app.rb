@@ -3,6 +3,7 @@
 # 環境設定
 ###############################
 require 'sinatra'
+require 'dotenv/load'
 require 'yaml'
 require 'sinatra/reloader'
 require 'active_record'
@@ -12,8 +13,6 @@ require './models/vote.rb'
 
 # 環境変数
 environment = ENV['RACK_ENV']
-DATABASE_URL = ENV['DATABASE_URL']
-puts DATABASE_URL
 
 # 開発環境フラグ
 dev_flag = environment == 'development'
