@@ -12,7 +12,7 @@ gem "bootstrap"
 gem "rake"
 
 # 開発時の環境変数設定用
-gem 'dotenv', groups: [:development, :test]
+gem 'dotenv'
 
 group :development do
   gem "sinatra-reloader"  # 開発時の自動リロード
