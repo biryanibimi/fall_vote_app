@@ -21,4 +21,5 @@ end
 group :development, :test do
   gem "rspec"  # テスト用
   gem "rack-test"  # テスト用
+  gem 'dotenv'
 end
