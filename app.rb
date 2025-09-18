@@ -4,11 +4,9 @@
 ###############################
 require 'sinatra'
 require 'yaml'
-require 'yaml/store'
 require 'sinatra/reloader'
 require 'active_record'
 require 'erb'
-require 'dotenv/load'
 require 'logger'
 require './models/vote.rb'
 
@@ -17,6 +15,11 @@ require './models/vote.rb'
 ###############################
 # 環境変数
 environment = ENV['RACK_ENV']
+
+# 開発環境のみ dotenv をロード
+if environment == 'development'
+  require 'dotenv/load'
+end
 
 # DB接続設定
 # エイリアス有効でdatabase.ymlを読み込む
