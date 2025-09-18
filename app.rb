@@ -12,6 +12,7 @@ require './models/vote.rb'
 
 # 環境変数
 environment = ENV['RACK_ENV']
+database_url = ENV['DATABASE_URL']
 
 # 開発環境フラグ
 dev_flag = environment == 'development'

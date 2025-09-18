@@ -1,4 +1,3 @@
-# 使用しない
 default: &default
   adapter: postgresql
   encoding: unicode
