@@ -13,6 +13,8 @@ require './models/vote.rb'
 
 # 環境変数
 environment = ENV['RACK_ENV']
+database_url = ENV['DATABASE_URL']
+puts database_url
 
 # 開発環境フラグ
 dev_flag = environment == 'development'
@@ -27,12 +29,11 @@ if dev_flag
   LOGGER = Logger.new(logfile)
 end
 
-database_url = ENV['DATABASE_URL']
-puts database_url
-
 # DB接続設定
 # エイリアス有効でdatabase.ymlを読み込む
 db_config = YAML.load_file('config/database.yml', aliases: true)
+db_config.merge({"production" => {"url" => database_url}}) unless dev_flag
+puts db_config
 ActiveRecord::Base.establish_connection(db_config[environment])
 
 ###############################
