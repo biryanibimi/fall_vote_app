@@ -22,7 +22,4 @@ COPY . .
 
 EXPOSE 4567
 
-CMD ["bundle", "exec", "rake", "db:migrate"]
-
-# CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 CMD ["bundle", "exec", "ruby", "app.rb", "-o", "0.0.0.0"]

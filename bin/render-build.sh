@@ -8,4 +8,4 @@ bundle exec rake db:prepare
 bundle exec rake db:seed
 
 # 本番運用開始後
-# bundle exec rake db:prepare
+# bundle exec rake db:migrate
